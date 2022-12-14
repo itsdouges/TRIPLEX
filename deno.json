@@ -1,0 +1,17 @@
+{
+  "importMap": "./import_map.json",
+  "tasks": {
+    "dev": "deno run --allow-run packages/triplex/mod.ts --watch",
+    "check": "deno run --allow-read --allow-write --allow-run scripts/check.ts"
+  },
+  "fmt": {
+    "options": {
+      "singleQuote": true
+    }
+  },
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "lib": ["dom", "dom.iterable", "dom.asynciterable", "deno.ns"],
+    "types": ["vite/client", "./types/vite.d.ts"]
+  }
+}
