@@ -3,15 +3,9 @@ body {
 }
 
 html,
-body {
-  height: 100%;
-}
-
+body,
 #root,
 #editor-canvas {
   height: 100%;
-}
-
-#editor-canvas {
   background-color: black;
 }

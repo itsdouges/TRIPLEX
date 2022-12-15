@@ -32,7 +32,8 @@ export function createServer(config: { tsConfigFilePath?: string }) {
     string,
     { watcher: Deno.FsWatcher; transformedPath: string }
   >();
-  const transformedFilesPath = () => posixPath.join(cwd, '.r3f');
+  const transformedFilesPath = () =>
+    posixPath.join(Deno.cwd(), 'node_modules', '.r3f', '.tmp');
 
   app.use(async (ctx, next) => {
     try {
@@ -506,14 +507,14 @@ export function createServer(config: { tsConfigFilePath?: string }) {
     };
   }
 
-  router.get('/scene/open', (context) => {
+  router.get('/scene/open', async (context) => {
     const path = getParam(context, 'path');
     const setCwd = getParam(context, 'cwd');
 
     if (setCwd !== cwd) {
       try {
         // First open, clear out the transform folder.
-        Deno.removeSync(transformedFilesPath(), { recursive: true });
+        await Deno.remove(transformedFilesPath(), { recursive: true });
       } catch (e) {
         if (e instanceof Deno.errors.NotFound) {
           // Already removed, continue
@@ -682,7 +683,7 @@ export function createServer(config: { tsConfigFilePath?: string }) {
     context.response.body = { message: 'success' };
   });
 
-  router.get('/scene/close', (context) => {
+  router.get('/scene/close', async (context) => {
     const path = getParam(context, 'path');
     const sourceFile = project.getSourceFile(path);
     if (sourceFile) {
@@ -691,7 +692,7 @@ export function createServer(config: { tsConfigFilePath?: string }) {
 
     const meta = sourceFiles.get(path);
     if (meta) {
-      Deno.removeSync(meta.transformedPath);
+      await Deno.remove(meta.transformedPath);
       meta.watcher.close();
       sourceFiles.delete(path);
     }

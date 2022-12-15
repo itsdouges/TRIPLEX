@@ -8,30 +8,32 @@ const root = dirname(fromFileUrl(import.meta.url));
 const args = Deno.args.includes('--watch') ? ['--watch'] : [];
 
 const backendProcess = Deno.run({
+  cwd: Deno.cwd(),
   cmd: [
     'deno',
     'run',
+    '--allow-net',
     '--allow-read',
     '--allow-write',
-    '--allow-net',
     ...args,
     join(root, 'src/backend.ts'),
   ],
 });
 
 const frontendProcess = Deno.run({
+  cwd: Deno.cwd(),
   cmd: [
     'deno',
     'run',
-    '--allow-ffi',
-    '--unstable',
-    '--allow-read',
-    '--allow-sys',
-    '--allow-run',
     '--allow-env',
-    '--allow-write',
+    '--allow-ffi',
     '--allow-net',
+    '--allow-read',
+    '--allow-run',
+    '--allow-sys',
+    '--allow-write',
     '--node-modules-dir',
+    '--unstable',
     ...args,
     join(root, 'src/frontend.ts'),
   ],

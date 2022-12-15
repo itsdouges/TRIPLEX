@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useForceVisible } from './scene-utils.tsx';
 
-const sceneModules = import.meta.glob('../.r3f/**/*.tsx');
+const sceneModules = import.meta.glob('../.tmp/**/*.tsx');
 
 interface SceneMeta {
   customLighting: boolean;
