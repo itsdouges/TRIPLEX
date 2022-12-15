@@ -33,7 +33,7 @@ export function createServer(config: { tsConfigFilePath?: string }) {
     { watcher: Deno.FsWatcher; transformedPath: string }
   >();
   const transformedFilesPath = () =>
-    posixPath.join(Deno.cwd(), 'node_modules', '.r3f', '.tmp');
+    posixPath.join(Deno.cwd(), 'node_modules', '.triplex', '.tmp');
 
   app.use(async (ctx, next) => {
     try {

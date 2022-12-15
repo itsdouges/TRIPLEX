@@ -11,13 +11,13 @@ import {
 // ISSUE: https://github.com/denoland/deno/issues/17043
 import './deps.ts';
 
-const root = join(Deno.cwd(), 'node_modules', '.r3f');
+const userModuleDir = join(Deno.cwd(), 'node_modules', '.triplex');
 const moduleDir = dirname(fromFileUrl(import.meta.url));
 const react = reactImport as unknown as typeof reactImport.default;
 
 export async function createServer(config: { publicDir?: string }) {
   try {
-    await Deno.symlink(moduleDir, root);
+    await Deno.symlink(moduleDir, userModuleDir);
   } catch (_) {
     // Link probably already exists
   }
@@ -31,11 +31,13 @@ export async function createServer(config: { publicDir?: string }) {
     publicDir: config.publicDir,
     resolve: {
       preserveSymlinks: true,
-      alias: {
-        'use-sync-external-store/shim/with-selector.js': 'react',
+    },
+    root: Deno.cwd(),
+    server: {
+      watch: {
+        ignored: ['!node_modules/**/*'],
       },
     },
-    root,
   });
 
   return frontendServer;

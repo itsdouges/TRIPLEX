@@ -8,7 +8,7 @@ interface EditorConfig {
 
 export async function getConfig(): Promise<EditorConfig> {
   try {
-    const config = await import(findParentFileOrThrow('r3f.config.json'), {
+    const config = await import(findParentFileOrThrow('triplex.config.json'), {
       assert: { type: 'json' },
     });
 
