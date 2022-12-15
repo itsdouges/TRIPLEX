@@ -5,6 +5,7 @@ import {
 } from 'https://deno.land/std@0.103.0/path/mod.ts';
 
 const root = dirname(fromFileUrl(import.meta.url));
+const args = Deno.args.includes('--watch') ? ['--watch'] : [];
 
 const backendProcess = Deno.run({
   cmd: [
@@ -13,7 +14,7 @@ const backendProcess = Deno.run({
     '--allow-read',
     '--allow-write',
     '--allow-net',
-    ...Deno.args,
+    ...args,
     join(root, 'src/backend.ts'),
   ],
 });
@@ -30,7 +31,8 @@ const frontendProcess = Deno.run({
     '--allow-env',
     '--allow-write',
     '--allow-net',
-    ...Deno.args,
+    '--node-modules-dir',
+    ...args,
     join(root, 'src/frontend.ts'),
   ],
 });

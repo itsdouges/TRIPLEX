@@ -1,10 +1,5 @@
 {
-  "deno.enablePaths": [
-    "packages",
-    "scripts"
-  ],
+  "deno.enable": true,
   "editor.defaultFormatter": "denoland.vscode-deno",
-  "files.exclude": {
-    "package-lock.json": true
-  }
+  "files.exclude": {}
 }

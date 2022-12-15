@@ -286,10 +286,11 @@ export function createServer(config: { tsConfigFilePath?: string }) {
       transformedFilesPath(),
       sourceFile.getFilePath(),
     );
+
     // This is a temporary destination so we can copy the source file and keep
     // node positions the same while transforming them.
     const tempDestination = posixPath.join(
-      posixPath.dirname(sourceFile.getFilePath()),
+      transformedFilesPath(),
       '/temp.tsx',
     );
     const transformedSource = sourceFile.copy(tempDestination, {
@@ -487,8 +488,8 @@ export function createServer(config: { tsConfigFilePath?: string }) {
     const sourceFileMeta = sourceFiles.get(path);
 
     if (!sourceFileMeta) {
-      const watcher = Deno.watchFs(path);
       const { transformedPath } = transformSouceFileSync(sourceFile);
+      const watcher = Deno.watchFs(path);
 
       sourceFiles.set(path, { transformedPath, watcher });
       watchSourceFile(sourceFile, watcher);

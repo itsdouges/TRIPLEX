@@ -1,4 +1,4 @@
-import { createServer } from 'triplex_backend';
+import { createServer } from 'https://deno.land/x/triplex_backend/mod.ts';
 import { getConfig } from './config.ts';
 
 const config = await getConfig();
