@@ -2,8 +2,8 @@
   "imports": {
     "@react-three/drei": "npm:@react-three/drei@9.45.0",
     "@react-three/fiber": "npm:@react-three/fiber@8.9.1",
-    "https://deno.land/x/triplex_backend@0.1.0/mod.ts": "./modules/triplex_backend/mod.ts",
-    "https://deno.land/x/triplex_frontend@0.1.0/mod.ts": "./modules/triplex_frontend/mod.ts",
+    "https://deno.land/x/triplex_backend@0.3.0/mod.ts": "./modules/triplex_backend/mod.ts",
+    "https://deno.land/x/triplex_frontend@0.3.0/mod.ts": "./modules/triplex_frontend/mod.ts",
     "react-dom": "npm:react-dom@18.2.0",
     "react-dom/client": "npm:react-dom@18.2.0/client",
     "react-router-dom": "npm:react-router-dom@6.4.4",
