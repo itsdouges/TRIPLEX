@@ -10,6 +10,7 @@
     "react": "npm:react@18.2.0",
     "react/jsx-runtime": "npm:react@18.2.0/jsx-runtime",
     "three-stdlib": "npm:three-stdlib@2.20.4",
-    "three": "npm:three@0.144.0"
+    "three": "npm:three@0.144.0",
+    "vite-deno-resolve": "/Users/douges/projects/rollup-deno-resolve/mod.ts"
   }
 }

@@ -25,9 +25,11 @@ export function createServer(config: { tsConfigFilePath?: string }) {
 
   const app = new Application();
   const router = new Router();
+
   const project = new Project({
     tsConfigFilePath: config.tsConfigFilePath,
   });
+
   const sourceFiles = new Map<
     string,
     { watcher: Deno.FsWatcher; transformedPath: string }
