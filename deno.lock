@@ -113,6 +113,7 @@
   },
   "npm": {
     "specifiers": {
+      "@react-three/drei": "@react-three/drei@9.45.0_@react-three+fiber@8.9.1__react@18.2.0__react-dom@18.2.0__three@0.144.0__react-dom@18.2.0___react@18.2.0_react@18.2.0_react-dom@18.2.0__react@18.2.0_three@0.144.0",
       "@react-three/drei@9.45.0": "@react-three/drei@9.45.0_@react-three+fiber@8.9.1_react@18.2.0_react-dom@18.2.0_three@0.144.0_@react-three+fiber@8.9.1__react@18.2.0__react-dom@18.2.0__three@0.144.0",
       "@react-three/fiber@8.9.1": "@react-three/fiber@8.9.1_react@18.2.0_react-dom@18.2.0_three@0.144.0_react-dom@18.2.0__react@18.2.0",
       "@vitejs/plugin-react@2.2.0": "@vitejs/plugin-react@2.2.0_vite@3.2.4_@babel+core@7.20.5",
@@ -438,6 +439,18 @@
           "react": "react@18.2.0"
         }
       },
+      "@react-spring/three@9.6.0_@react-three+fiber@8.9.1__react@18.2.0__react-dom@18.2.0__three@0.144.0__react-dom@18.2.0___react@18.2.0_react@18.2.0_three@0.144.0": {
+        "integrity": "sha512-7JCx7uvJyKFHs9XnRXmAlf1VCjwDiEoiNnCpjpZiOOC8AukTRNHeFNsqwa9WKpEBNciHxAivAxxzSVh6JkBk0g==",
+        "dependencies": {
+          "@react-spring/animated": "@react-spring/animated@9.6.0_react@18.2.0",
+          "@react-spring/core": "@react-spring/core@9.6.0_react@18.2.0",
+          "@react-spring/shared": "@react-spring/shared@9.6.0_react@18.2.0",
+          "@react-spring/types": "@react-spring/types@9.6.0",
+          "@react-three/fiber": "@react-three/fiber@8.9.1_react@18.2.0_react-dom@18.2.0_three@0.144.0_react-dom@18.2.0__react@18.2.0",
+          "react": "react@18.2.0",
+          "three": "three@0.144.0"
+        }
+      },
       "@react-spring/three@9.6.0_@react-three+fiber@8.9.1__react@18.2.0__react-dom@18.2.0__three@0.144.0_react@18.2.0_three@0.144.0": {
         "integrity": "sha512-7JCx7uvJyKFHs9XnRXmAlf1VCjwDiEoiNnCpjpZiOOC8AukTRNHeFNsqwa9WKpEBNciHxAivAxxzSVh6JkBk0g==",
         "dependencies": {
@@ -453,6 +466,33 @@
       "@react-spring/types@9.6.0": {
         "integrity": "sha512-XOWupgf+/rMhQTiIxZzjVRw+4ZNkXcO5tuha3pOBNK88a7LPGjM6imdS1aQ2kl3y1sBy0f9JrclNShfASbkvTw==",
         "dependencies": {}
+      },
+      "@react-three/drei@9.45.0_@react-three+fiber@8.9.1__react@18.2.0__react-dom@18.2.0__three@0.144.0__react-dom@18.2.0___react@18.2.0_react@18.2.0_react-dom@18.2.0__react@18.2.0_three@0.144.0": {
+        "integrity": "sha512-/zvV9hOb+jJeLR9tCZfxaLxcGMDVsKZ0WcSKtRYv932K8Ql2qd/2JGLOal0/oWorI77mzyhvvP254ILJr1HJYQ==",
+        "dependencies": {
+          "@babel/runtime": "@babel/runtime@7.20.6",
+          "@react-spring/three": "@react-spring/three@9.6.0_@react-three+fiber@8.9.1__react@18.2.0__react-dom@18.2.0__three@0.144.0__react-dom@18.2.0___react@18.2.0_react@18.2.0_three@0.144.0",
+          "@react-three/fiber": "@react-three/fiber@8.9.1_react@18.2.0_react-dom@18.2.0_three@0.144.0_react-dom@18.2.0__react@18.2.0",
+          "@use-gesture/react": "@use-gesture/react@10.2.23_react@18.2.0",
+          "detect-gpu": "detect-gpu@4.0.50",
+          "glsl-noise": "glsl-noise@0.0.0",
+          "lodash.clamp": "lodash.clamp@4.0.3",
+          "lodash.omit": "lodash.omit@4.5.0",
+          "lodash.pick": "lodash.pick@4.4.0",
+          "meshline": "meshline@2.0.4_three@0.144.0",
+          "react": "react@18.2.0",
+          "react-composer": "react-composer@5.0.3_react@18.2.0",
+          "react-dom": "react-dom@18.2.0_react@18.2.0",
+          "react-merge-refs": "react-merge-refs@1.1.0",
+          "stats.js": "stats.js@0.17.0",
+          "suspend-react": "suspend-react@0.0.8_react@18.2.0",
+          "three": "three@0.144.0",
+          "three-mesh-bvh": "three-mesh-bvh@0.5.19_three@0.144.0",
+          "three-stdlib": "three-stdlib@2.20.4_three@0.144.0",
+          "troika-three-text": "troika-three-text@0.46.4_three@0.144.0",
+          "utility-types": "utility-types@3.10.0",
+          "zustand": "zustand@3.7.2_react@18.2.0"
+        }
       },
       "@react-three/drei@9.45.0_@react-three+fiber@8.9.1_react@18.2.0_react-dom@18.2.0_three@0.144.0_@react-three+fiber@8.9.1__react@18.2.0__react-dom@18.2.0__three@0.144.0": {
         "integrity": "sha512-/zvV9hOb+jJeLR9tCZfxaLxcGMDVsKZ0WcSKtRYv932K8Ql2qd/2JGLOal0/oWorI77mzyhvvP254ILJr1HJYQ==",

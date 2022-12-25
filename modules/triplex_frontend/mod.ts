@@ -6,7 +6,7 @@ import {
   fromFileUrl,
   join,
 } from 'https://deno.land/std@0.103.0/path/mod.ts';
-import deno from 'vite-deno-resolve';
+import deno from 'https://deno.land/x/vite_plugin_deno_resolve@0.4.0/mod.ts';
 // HACK: We need to import frontend deps in the deno module so the deps are actually installed.
 // ISSUE: https://github.com/denoland/deno/issues/17043
 import './deps.ts';
